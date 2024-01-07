@@ -3,39 +3,63 @@ const { MODE } = require(`${basePath}/constants/blend_mode.js`);
 const { NETWORK } = require(`${basePath}/constants/network.js`);
 
 const network = NETWORK.eth;
-
 // General metadata for Ethereum
-const namePrefix = "Your Collection";
-const description = "Remember to replace this description";
-const baseUri = "ipfs://NewUriToReplace";
+const namePrefix = "Seipes";
+const description = "Seipes";
+const baseUri = "";
 
 const solanaMetadata = {
-  symbol: "YC",
+  symbol: "SEIPES",
   seller_fee_basis_points: 1000, // Define how much % you want from secondary market sales 1000 = 10%
-  external_url: "https://www.youtube.com/c/hashlipsnft",
+  external_url: "",
   creators: [
     {
-      address: "7fXNuer5sbZtaTEPhtJ5g5gNtuyRoKkvxdjEjEnPN4mC",
+      address: "",
       share: 100,
     },
   ],
 };
 
-// If you have selected Solana then the collection starts from 0 automatically
+//If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
   {
-    growEditionSizeTo: 5,
+    // Creates an Common 2000 artworks
+    growEditionSizeTo: 2000,
     layersOrder: [
-      { name: "Background" },
-      { name: "Eyeball" },
-      { name: "Eye color" },
-      { name: "Iris" },
-      { name: "Shine" },
-      { name: "Bottom lid" },
-      { name: "Top lid" },
+      { name: "Common Background" },
+      { name: "Common Body" },
+      { name: "Common Clothing" },
+      { name: "Common Eyes" },
+      { name: "Common Mouth" },
+      { name: "Common Head" },
+    ],
+  },
+  {
+    // Creates an Rare 1023 artworks
+    growEditionSizeTo: 3023,
+    layersOrder: [
+      { name: "Rare Background" },
+      { name: "Rare Body" },
+      { name: "Rare Clothing" },
+      { name: "Rare Eyes" },
+      { name: "Rare Mouth" },
+      { name: "Rare Head" },
+    ],
+  },
+  {
+    // Creates legendary 310 artworks
+    growEditionSizeTo: 3323,
+    layersOrder: [
+      { name: "Legendary Background" },
+      { name: "Legendary Body" },
+      { name: "Legendary Clothing" },
+      { name: "Legendary Eyes" },
+      { name: "Legendary Mouth" },
+      { name: "Legendary Head" },
     ],
   },
 ];
+
 
 const shuffleLayerConfigurations = false;
 
